@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   BadgeCheck,
   CalendarDays,
-  PlayCircle,
   ListChecks,
   Sparkles,
   UserRoundCheck,
@@ -38,13 +37,14 @@ export default function HomePage() {
             </span>
           </div>
           <div className="cta-row">
-            <Link className="btn btn-primary" href="/support">
-              <Sparkles size={16} aria-hidden="true" />
-              Start Planning
-            </Link>
-            <Link className="btn btn-secondary" href="#how-it-works">
-              <PlayCircle size={16} aria-hidden="true" />
-              See How It Works
+            <Link className="app-store-badge" href="/#app-store" aria-label="Download on the App Store">
+              <span className="app-store-logo text-2xl items-start" aria-hidden="true">
+                
+              </span>
+              <span className="app-store-copy">
+                <span className="app-store-copy-top">Download on the</span>
+                <span className="app-store-copy-bottom">App Store</span>
+              </span>
             </Link>
           </div>
         </div>

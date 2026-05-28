@@ -285,6 +285,50 @@ a {
   gap: 10px;
 }
 
+.app-store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 10px 16px 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.34);
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+
+.app-store-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.03);
+}
+
+.app-store-logo {
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+}
+
+.app-store-copy {
+  display: grid;
+  line-height: 1.05;
+}
+
+.app-store-copy-top {
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.app-store-copy-bottom {
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
 .btn {
   border: 0;
   border-radius: 12px;

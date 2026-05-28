@@ -8,14 +8,12 @@ const basePath = configuredBasePath || (isGitHubPagesBuild ? `/${repoName}` : ""
 
 const nextConfig: NextConfig = {
   output: "export",
+  outputFileTracingRoot: path.resolve(__dirname),
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
   trailingSlash: true,
   images: {
     unoptimized: true,
-  },
-  turbopack: {
-    root: path.join(__dirname, "../.."),
   },
 };
 
