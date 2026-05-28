@@ -465,6 +465,130 @@ a {
   font-size: 0.86rem;
 }
 
+.pricing-eyebrow {
+  margin: 0 0 8px;
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pricing-lead {
+  max-width: 62ch;
+}
+
+.pricing-grid,
+.feature-tiers {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.plan-card,
+.feature-tier-card,
+.pricing-notes {
+  position: relative;
+  border: 1px solid #ecd8c4;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fffdf9, #fff7ee);
+  padding: 18px;
+}
+
+.plan-card-pro,
+.feature-tier-card-accent {
+  border-color: #e3a16e;
+  background:
+    radial-gradient(circle at top right, rgba(232, 98, 26, 0.12), transparent 34%),
+    linear-gradient(180deg, #fff8f0, #fff3e7);
+}
+
+.plan-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(232, 98, 26, 0.12);
+  color: #a14a18;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.plan-header,
+.tier-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.plan-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  color: var(--orange);
+  background: linear-gradient(180deg, #fff4e9, #ffe8d4);
+  flex: 0 0 auto;
+}
+
+.plan-kicker {
+  margin: 0 0 4px;
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plan-header h3,
+.tier-heading h3,
+.pricing-notes h3 {
+  margin: 0;
+  color: var(--brown-mid);
+  font-size: 1.1rem;
+}
+
+.plan-price-note,
+.plan-summary,
+.tier-copy {
+  margin: 8px 0 0;
+  color: var(--text-secondary);
+}
+
+.feature-list {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.feature-list li svg {
+  color: var(--green);
+  margin-top: 2px;
+  flex: 0 0 auto;
+}
+
+.feature-list-compact {
+  gap: 8px;
+}
+
+.pricing-notes {
+  margin-top: 16px;
+}
+
 .cta-row-tight {
   margin-top: 16px;
 }
@@ -621,6 +745,53 @@ html[data-theme="dark"] .mini-highlights span {
   color: #f6d8bf;
 }
 
+html[data-theme="dark"] .pricing-eyebrow {
+  color: #ffad71;
+}
+
+html[data-theme="dark"] .plan-card,
+html[data-theme="dark"] .feature-tier-card,
+html[data-theme="dark"] .pricing-notes {
+  border-color: #544032;
+  background: linear-gradient(180deg, #31241d, #271c17);
+}
+
+html[data-theme="dark"] .plan-card-pro,
+html[data-theme="dark"] .feature-tier-card-accent {
+  border-color: #c87943;
+  background:
+    radial-gradient(circle at top right, rgba(232, 98, 26, 0.14), transparent 34%),
+    linear-gradient(180deg, #36261d, #2c1f19);
+}
+
+html[data-theme="dark"] .plan-badge {
+  background: rgba(255, 163, 99, 0.12);
+  color: #ffba87;
+}
+
+html[data-theme="dark"] .plan-icon {
+  color: #ffad71;
+  background: linear-gradient(180deg, #3e2c22, #33251d);
+}
+
+html[data-theme="dark"] .plan-kicker,
+html[data-theme="dark"] .plan-price-note,
+html[data-theme="dark"] .plan-summary,
+html[data-theme="dark"] .tier-copy,
+html[data-theme="dark"] .feature-list li {
+  color: #dfc8b4;
+}
+
+html[data-theme="dark"] .plan-header h3,
+html[data-theme="dark"] .tier-heading h3,
+html[data-theme="dark"] .pricing-notes h3 {
+  color: #ffe3cd;
+}
+
+html[data-theme="dark"] .feature-list li svg {
+  color: #95d0a9;
+}
+
 html[data-theme="dark"] .inline-link {
   color: #ffad71;
 }
@@ -688,6 +859,11 @@ html[data-theme="dark"] .footer {
     grid-template-columns: 1fr;
   }
 
+  .pricing-grid,
+  .feature-tiers {
+    grid-template-columns: 1fr;
+  }
+
   .site-shell {
     padding: 16px;
   }
@@ -709,5 +885,11 @@ html[data-theme="dark"] .footer {
 
   .hero-title-accent {
     text-decoration-thickness: 4px;
+  }
+
+  .plan-badge {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 12px;
   }
 }
