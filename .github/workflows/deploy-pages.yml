@@ -38,6 +38,9 @@ jobs:
         working-directory: website
         run: npm run build
 
+      - name: Ensure GitHub Pages serves _next assets
+        run: touch website/out/.nojekyll
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
