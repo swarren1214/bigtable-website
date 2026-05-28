@@ -3,7 +3,8 @@ import path from "node:path";
 
 const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
 const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === "true" && Boolean(repoName);
-const basePath = isGitHubPagesBuild ? `/${repoName}` : "";
+const configuredBasePath = process.env.NEXT_PUBLIC_BASE_PATH?.replace(/\/$/, "") ?? "";
+const basePath = configuredBasePath || (isGitHubPagesBuild ? `/${repoName}` : "");
 
 const nextConfig: NextConfig = {
   output: "export",

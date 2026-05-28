@@ -6,6 +6,8 @@ import {
 
 import { ThemeToggle } from "@/components/theme-toggle";
 
+const PUBLIC_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/privacy", label: "Privacy" },
@@ -24,7 +26,7 @@ export function SiteShell({ children }: SiteShellProps) {
         <div className="brand-wrap">
           <Link href="/" className="brand" aria-label="BigTable home">
             <span className="brand-mark" aria-hidden="true">
-              <img src="/logo.svg" alt="" className="brand-logo" />
+              <img src={`${PUBLIC_BASE_PATH}/logo.svg`} alt="" className="brand-logo" />
             </span>
             <span className="brand-text">
               <strong>BigTable</strong>

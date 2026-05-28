@@ -11,6 +11,8 @@ import {
 
 import { SiteShell } from "@/components/site-shell";
 
+const PUBLIC_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export default function HomePage() {
   return (
     <SiteShell>
@@ -48,7 +50,7 @@ export default function HomePage() {
         </div>
         <div className="hero-media" aria-hidden="true">
           <Image
-            src="/mockup.png"
+            src={`${PUBLIC_BASE_PATH}/mockup.png`}
             alt=""
             width={928}
             height={1409}
