@@ -14,7 +14,7 @@ export default function DeleteAccountPage() {
 
         <h2>How to Request Deletion</h2>
         <ol>
-          <li>Send an email from your account email to support@bigtable.family.</li>
+          <li>Send an email from your account email to bigtablemeals@gmail.com.</li>
           <li>Use the subject line: Account Deletion Request.</li>
           <li>Include your full name and the email linked to your BigTable account.</li>
         </ol>

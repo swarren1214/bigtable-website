@@ -53,7 +53,7 @@ export default function TermsPage() {
           title: "Contact",
           body: (
             <p>
-              Questions about these Terms can be sent to support@bigtable.family.
+              Questions about these Terms can be sent to bigtablemeals@gmail.com.
             </p>
           ),
         },

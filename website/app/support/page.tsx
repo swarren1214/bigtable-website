@@ -11,7 +11,7 @@ export default function SupportPage() {
 
         <h2>Contact Support</h2>
         <p>
-          Email us at <a href="mailto:support@bigtable.family">support@bigtable.family</a>.
+          Email us at <a href="mailto:bigtablemeals@gmail.com">bigtablemeals@gmail.com</a>.
         </p>
 
         <h2>Response Time</h2>

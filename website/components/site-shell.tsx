@@ -56,7 +56,7 @@ export function SiteShell({ children }: SiteShellProps) {
         </span>
         <span className="footer-item">
           <LifeBuoy size={14} aria-hidden="true" />
-          Contact: support@bigtable.family
+          Contact: bigtablemeals@gmail.com
         </span>
         <span className="footer-sep" aria-hidden="true">
           |

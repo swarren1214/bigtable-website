@@ -57,7 +57,7 @@ export default function PrivacyPage() {
             <ul>
               <li>You may request access to or correction of your personal information.</li>
               <li>You may request account deletion using our dedicated deletion process.</li>
-              <li>You may contact us about privacy rights at support@bigtable.family.</li>
+              <li>You may contact us about privacy rights at bigtablemeals@gmail.com.</li>
             </ul>
           ),
         },
