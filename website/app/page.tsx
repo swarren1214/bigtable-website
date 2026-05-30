@@ -5,7 +5,6 @@ import {
   CalendarDays,
   Check,
   Crown,
-  CreditCard,
   ListChecks,
   Sparkles,
   UserRoundCheck,
@@ -32,7 +31,7 @@ export default function HomePage() {
           <div className="hero-meta" aria-label="Highlights">
             <span>
               <BadgeCheck size={15} aria-hidden="true" />
-              App Store review ready
+              Public beta now available
             </span>
             <span>
               <Sparkles size={15} aria-hidden="true" />
@@ -40,24 +39,38 @@ export default function HomePage() {
             </span>
           </div>
           <div className="cta-row">
-            <Link className="app-store-badge" href="/#app-store" aria-label="Download on the App Store">
+            <Link
+              className="app-store-badge"
+              href="https://testflight.apple.com/join/y9rJcWdE"
+              aria-label="Join the BigTable public beta on TestFlight"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="app-store-logo text-2xl items-start" aria-hidden="true">
                 
               </span>
               <span className="app-store-copy">
-                <span className="app-store-copy-top">Download on the</span>
-                <span className="app-store-copy-bottom">App Store</span>
+                <span className="app-store-copy-top">Public Beta</span>
+                <span className="app-store-copy-bottom">Join on TestFlight</span>
               </span>
             </Link>
           </div>
         </div>
         <div className="hero-media" aria-hidden="true">
           <Image
-            src={`${PUBLIC_BASE_PATH}/mockup.png`}
+            src={`${PUBLIC_BASE_PATH}/render_light_mode.png`}
             alt=""
             width={928}
             height={1409}
-            className="hero-mockup"
+            className="hero-mockup hero-mockup-light"
+            priority
+          />
+          <Image
+            src={`${PUBLIC_BASE_PATH}/render_dark_mode.png`}
+            alt=""
+            width={928}
+            height={1409}
+            className="hero-mockup hero-mockup-dark"
             priority
           />
         </div>
@@ -131,11 +144,11 @@ export default function HomePage() {
       <section id="pricing" className="section reveal delay-3">
         <p className="pricing-eyebrow">Pricing &amp; Features</p>
         <h2 className="section-title" style={{ fontFamily: "var(--font-display), serif" }}>
-          Flexible plans for manual planning or AI-powered help
+          Pick your plan and start planning better meals this week
         </h2>
         <p className="section-lead pricing-lead">
-          Start free with the full manual planning workflow, then upgrade when you want
-          AI-assisted meal plans, grocery automation, and recipe capture.
+          Start free with powerful household planning tools, then unlock Pro when you want
+          faster AI meal planning and smarter grocery support.
         </p>
 
         <div className="pricing-grid">
@@ -147,30 +160,46 @@ export default function HomePage() {
               <div>
                 <p className="plan-kicker">Starter</p>
                 <h3>Free</h3>
+                <p className="plan-price-note">Perfect for hands-on weekly planning</p>
               </div>
             </div>
+            <p className="plan-summary">Why it is awesome: simple shared planning for the whole family.</p>
             <ul className="feature-list">
               <li>
                 <Check size={16} aria-hidden="true" />
-                Manual meal planning
+                Plan every day of the week in minutes
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                Recipe library access
+                Browse and save recipes your family actually likes
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                Household setup
+                Set up household members and food preferences
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                Manual grocery list
+                Build and check off organized grocery lists
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                Family sharing
+                Share plans and lists with the whole household
               </li>
             </ul>
+            <div className="mini-highlights" aria-label="Starter plan highlights">
+              <span>
+                <BadgeCheck size={15} aria-hidden="true" />
+                Always free
+              </span>
+              <span>
+                <ListChecks size={15} aria-hidden="true" />
+                Easy weekly flow
+              </span>
+              <span>
+                <UserRoundCheck size={15} aria-hidden="true" />
+                Family collaboration
+              </span>
+            </div>
           </article>
 
           <article className="plan-card plan-card-pro">
@@ -185,117 +214,62 @@ export default function HomePage() {
                 <p className="plan-price-note">or $55.99/year</p>
               </div>
             </div>
-            <p className="plan-summary">Everything in Starter, plus:</p>
+            <p className="plan-summary">
+              Why it is awesome: AI handles the heavy lifting so you save time every week.
+            </p>
             <ul className="feature-list">
               <li>
                 <Check size={16} aria-hidden="true" />
-                AI meal plan generation from natural language prompts
+                Generate full meal plans from a simple prompt
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                AI grocery list generation from planned meals
+                Instantly create grocery lists from your planned meals
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                AI-assisted recipe image generation
+                Create recipe visuals with AI assistance
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                Recipe scan from photos or documents
+                Import recipes from photos and documents
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                Custom recipe creation
+                Create and store custom family recipes
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                Estimated grocery cost display
+                See estimated grocery costs before checkout
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                Grocery snapshot, history, and restore
+                Restore previous grocery lists anytime
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                Meal plan preview before publishing AI updates
+                Preview AI updates before saving your plan
               </li>
               <li>
                 <Check size={16} aria-hidden="true" />
-                Date-range and slot targeting for AI generation
+                Target specific dates and meal slots for AI planning
               </li>
             </ul>
-          </article>
-        </div>
-
-        <div className="feature-tiers">
-          <article className="feature-tier-card">
-            <div className="tier-heading">
-              <span className="plan-icon" aria-hidden="true">
-                <ListChecks size={18} />
-              </span>
-              <div>
-                <p className="plan-kicker">Always Free</p>
-                <h3>Core household planning</h3>
-              </div>
-            </div>
-            <ul className="feature-list feature-list-compact">
-              <li><Check size={16} aria-hidden="true" />7-day meal planner (manual, no AI)</li>
-              <li><Check size={16} aria-hidden="true" />Mark meals complete, exclude household members</li>
-              <li><Check size={16} aria-hidden="true" />Recipe library with search, filter, and detail views</li>
-              <li><Check size={16} aria-hidden="true" />Save favorite recipes</li>
-              <li><Check size={16} aria-hidden="true" />Manual grocery list (no AI generation)</li>
-              <li><Check size={16} aria-hidden="true" />Store-section grouping and interactive checklist</li>
-              <li><Check size={16} aria-hidden="true" />Grocery list sharing to family</li>
-              <li><Check size={16} aria-hidden="true" />Household setup, member management, and dietary restrictions</li>
-              <li><Check size={16} aria-hidden="true" />Email/password and Apple Sign In</li>
-              <li><Check size={16} aria-hidden="true" />Light and dark theme</li>
-            </ul>
-          </article>
-
-          <article className="feature-tier-card feature-tier-card-accent">
-            <div className="tier-heading">
-              <span className="plan-icon" aria-hidden="true">
-                <Sparkles size={18} />
-              </span>
-              <div>
-                <p className="plan-kicker">Pro</p>
-                <h3>AI and advanced workflow tools</h3>
-              </div>
-            </div>
-            <p className="tier-copy">
-              All free features, plus every premium capability in the Pro plan above.
-            </p>
             <div className="mini-highlights" aria-label="Pro plan highlights">
               <span>
                 <Sparkles size={15} aria-hidden="true" />
-                AI planning prompts
+                AI-powered speed
               </span>
               <span>
-                <CreditCard size={15} aria-hidden="true" />
-                Estimated grocery costs
+                <BadgeCheck size={15} aria-hidden="true" />
+                Smarter grocery prep
               </span>
               <span>
                 <Crown size={15} aria-hidden="true" />
-                Annual savings option
+                Best value annually
               </span>
             </div>
           </article>
-        </div>
-
-        <div className="pricing-notes">
-          <h3>Pricing notes</h3>
-          <ul className="feature-list feature-list-compact">
-            <li>
-              <Check size={16} aria-hidden="true" />
-              Monthly pricing stays just below $7 to remain competitive with similar
-              family utility apps.
-            </li>
-            <li>
-              <Check size={16} aria-hidden="true" />
-              Annual billing at $55.99 gives a clear 33% discount to encourage longer
-              commitments and reduce churn.
-            </li>
-          </ul>
         </div>
       </section>
     </SiteShell>
