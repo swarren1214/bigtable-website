@@ -50,10 +50,8 @@ a {
 }
 
 .top-nav {
-  display: grid;
-  grid-template-columns: minmax(240px, auto) 1fr;
-  align-items: center;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #e8d8c7;
   border-radius: 20px;
   background:
@@ -75,11 +73,6 @@ a {
   border-radius: 999px;
   background: radial-gradient(circle, rgba(232, 98, 26, 0.14), transparent 70%);
   pointer-events: none;
-}
-
-.brand-wrap {
-  display: grid;
-  gap: 6px;
 }
 
 .brand {
@@ -141,6 +134,51 @@ a {
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e3d3c1;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #5f4228;
+  padding: 8px;
+  cursor: pointer;
+  transition: border-color 120ms ease, color 120ms ease;
+}
+
+.nav-hamburger:hover {
+  border-color: #d08a54;
+  color: #8f4417;
+}
+
+.nav-mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e8d8c7;
+}
+
+.nav-mobile-menu .nav-link {
+  padding: 10px 8px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.nav-mobile-menu .nav-link:hover {
+  background: rgba(232, 98, 26, 0.07);
+  transform: none;
 }
 
 .nav-link {
@@ -858,19 +896,6 @@ html[data-theme="dark"] .footer {
 }
 
 @media (max-width: 900px) {
-  .top-nav {
-    grid-template-columns: 1fr;
-  }
-
-  .nav-actions {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .nav-links {
-    justify-content: flex-start;
-  }
-
   .grid-3 {
     grid-template-columns: 1fr;
   }
@@ -907,5 +932,34 @@ html[data-theme="dark"] .footer {
     position: static;
     display: inline-flex;
     margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: inline-flex;
+  }
+
+  html[data-theme="dark"] .nav-hamburger {
+    border-color: #5d4738;
+    background: rgba(33, 25, 20, 0.92);
+    color: #f2d6be;
+  }
+
+  html[data-theme="dark"] .nav-hamburger:hover {
+    border-color: #cc7a42;
+    color: #ffb27a;
+  }
+
+  html[data-theme="dark"] .nav-mobile-menu {
+    border-top-color: #4d3b2e;
+  }
+
+  html[data-theme="dark"] .nav-mobile-menu .nav-link:hover {
+    background: rgba(232, 98, 26, 0.1);
   }
 }
