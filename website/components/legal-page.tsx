@@ -18,11 +18,11 @@ export function LegalPage({ title, updatedAt, intro, sections }: LegalPageProps)
       <article className="legal-wrap reveal delay-1">
         <h1 style={{ fontFamily: "var(--font-display), serif" }}>{title}</h1>
         <p className="legal-meta">Last updated: {updatedAt}</p>
-        <p>{intro}</p>
+        <div className="legal-intro">{intro}</div>
         {sections.map((section) => (
-          <section key={section.title}>
+          <section key={section.title} className="legal-section">
             <h2>{section.title}</h2>
-            <div>{section.body}</div>
+            <div className="legal-section-body">{section.body}</div>
           </section>
         ))}
       </article>

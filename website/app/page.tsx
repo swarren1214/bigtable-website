@@ -38,22 +38,51 @@ export default function HomePage() {
               AI-assisted weekly planning
             </span>
           </div>
-          <div className="cta-row">
-            <Link
-              className="app-store-badge"
-              href="https://testflight.apple.com/join/y9rJcWdE"
-              aria-label="Join the BigTable public beta on TestFlight"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="app-store-logo text-2xl items-start" aria-hidden="true">
-                
-              </span>
-              <span className="app-store-copy">
-                <span className="app-store-copy-top">Public Beta</span>
-                <span className="app-store-copy-bottom">Join on TestFlight</span>
-              </span>
-            </Link>
+          <div className="beta-steps" aria-label="Steps to download the beta">
+            <p className="beta-steps-title">Steps to download the beta</p>
+
+            <div className="beta-step">
+              <p className="beta-step-label">Step 1 - Download the Apple TestFlight app</p>
+              <Link
+                className="app-store-badge"
+                href="https://apps.apple.com/us/app/testflight/id899247664"
+                aria-label="Download Apple TestFlight"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="testflight-icon" aria-hidden="true">
+                  <Image
+                    src={`${PUBLIC_BASE_PATH}/testflight-icon.png`}
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                </span>
+                <span className="app-store-copy">
+                  <span className="app-store-copy-top">Download on the App Store</span>
+                  <span className="app-store-copy-bottom">Apple TestFlight</span>
+                </span>
+              </Link>
+            </div>
+
+            <div className="beta-step">
+              <p className="beta-step-label">Step 2 - Tap on the button below to download the BigTable beta</p>
+              <Link
+                className="app-store-badge"
+                href="https://testflight.apple.com/join/y9rJcWdE"
+                aria-label="Join the BigTable public beta on TestFlight"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="bigtable-icon-tile" aria-hidden="true">
+                  <Image src={`${PUBLIC_BASE_PATH}/logo.svg`} alt="" width={22} height={16} />
+                </span>
+                <span className="app-store-copy">
+                  <span className="app-store-copy-top">Public Beta</span>
+                  <span className="app-store-copy-bottom">BigTable</span>
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="hero-media" aria-hidden="true">
