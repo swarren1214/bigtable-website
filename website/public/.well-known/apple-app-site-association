@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appIDs": ["TEAMID.com.stephenwarren.bigtable"],
+        "appIDs": ["BH8R3BX5WF.com.stephenwarren.bigtable"],
         "components": [
           {
             "/": "/recipe/*",
