@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["TEAMID.com.stephenwarren.bigtable"],
+        "components": [
+          {
+            "/": "/recipe/*",
+            "comment": "Opens recipe share links in the BigTable app"
+          }
+        ]
+      }
+    ]
+  }
+}
