@@ -6,11 +6,44 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 const PUBLIC_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const IOS_APP_STORE_URL = "https://apps.apple.com/us/app/bigtable/id6772788255";
+const ANDROID_BETA_PATH = "/download/android-beta/";
+
+type DeviceType = "ios" | "android" | "other";
+
+function detectDeviceType(): DeviceType {
+  const userAgent = navigator.userAgent;
+
+  if (/android/i.test(userAgent)) {
+    return "android";
+  }
+
+  if (
+    /iPhone|iPad|iPod/i.test(userAgent)
+    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+  ) {
+    return "ios";
+  }
+
+  return "other";
+}
 
 export function RecipeDeepLink() {
   const searchParams = useSearchParams();
   const recipeId = searchParams.get("id");
   const [appOpened, setAppOpened] = useState(false);
+  const [deviceType, setDeviceType] = useState<DeviceType>("other");
+
+  const fallbackHref =
+    deviceType === "ios"
+      ? IOS_APP_STORE_URL
+      : deviceType === "android"
+        ? `${PUBLIC_BASE_PATH}${ANDROID_BETA_PATH}`
+        : `${PUBLIC_BASE_PATH}/download/`;
+
+  useEffect(() => {
+    setDeviceType(detectDeviceType());
+  }, []);
 
   useEffect(() => {
     if (!recipeId) return;
@@ -23,9 +56,17 @@ export function RecipeDeepLink() {
 
   const handleOpenApp = () => {
     if (!recipeId) return;
+
     window.location.href = `bigtable://recipe/${recipeId}`;
-    // After a short delay, assume the app didn't open and show the download prompt.
-    setTimeout(() => setAppOpened(true), 1500);
+
+    // If the browser never leaves the page, assume the app isn't installed and
+    // route to the correct install/join destination for that device.
+    setTimeout(() => {
+      if (document.visibilityState === "visible") {
+        setAppOpened(true);
+        window.location.href = fallbackHref;
+      }
+    }, 1500);
   };
 
   return (
@@ -51,7 +92,7 @@ export function RecipeDeepLink() {
           </h1>
           <p className="section-lead" style={{ margin: 0 }}>
             {appOpened
-              ? "If the app didn't open, download BigTable to view this recipe."
+              ? "If the app didn't open, use the link below to continue."
               : "Tap the button below to open this recipe in the BigTable app."}
           </p>
         </div>
@@ -70,8 +111,12 @@ export function RecipeDeepLink() {
           <p className="section-lead" style={{ margin: 0, fontSize: "0.875rem" }}>
             Don&apos;t have BigTable yet?
           </p>
-          <Link href="/download/" className="btn btn-secondary">
-            Download BigTable
+          <Link href={fallbackHref} className="btn btn-secondary">
+            {deviceType === "ios"
+              ? "Download on the App Store"
+              : deviceType === "android"
+                ? "Join Android Beta"
+                : "Download BigTable"}
           </Link>
         </div>
       </div>
