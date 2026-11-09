@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.hearthapps.bigtable",
+      "sha256_cert_fingerprints": ["89:81:2F:24:9B:D4:D9:D0:20:C7:E4:D4:7E:51:29:BD:6C:23:01:8F:42:07:10:F3:3C:D6:A9:A2:E7:13:C5:2E"]
+    }
+  }
+]
